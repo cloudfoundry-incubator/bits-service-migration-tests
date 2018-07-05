@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-go install -v github.com/onsi/ginkgo/ginkgo
+go get github.com/onsi/ginkgo/ginkgo
 
 go list github.com/cloudfoundry-incubator/bits-service-migration-tests/... \
   | grep -v github.com/cloudfoundry-incubator/bits-service-migration-tests/assets \

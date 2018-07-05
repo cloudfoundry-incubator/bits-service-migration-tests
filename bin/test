@@ -1,16 +1,4 @@
-#!/bin/bash
-
-set -e -x
-
-bin_dir=$(dirname "${BASH_SOURCE[0]}")
-project_go_root="${bin_dir}/../../../../../"
-
-pushd "${project_go_root}" > /dev/null
-  project_gopath=$PWD
-popd > /dev/null
-
-export GOPATH="${project_gopath}":$GOPATH
-export PATH="${project_gopath}/bin":$PATH
+#!/bin/bash -ex
 
 go install -v github.com/onsi/ginkgo/ginkgo
 

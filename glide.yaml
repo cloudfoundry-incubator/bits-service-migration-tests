@@ -1,0 +1,15 @@
+package: github.com/cloudfoundry-incubator/bits-service-migration-tests
+import:
+- package: github.com/cloudfoundry-incubator/cf-test-helpers
+  version: 4dd9d48177008d37e3a5e581cf65c8585453e45c
+  subpackages:
+  - cf
+  - helpers
+- package: github.com/onsi/gomega
+  subpackages:
+  - gexec
+testImport:
+- package: github.com/onsi/ginkgo
+- package: github.com/pivotal-golang/archiver
+  subpackages:
+  - extractor/test_helper

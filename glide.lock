@@ -1,0 +1,85 @@
+hash: b89af93ad78cb8fcaa7cd5d1d1abcfb2f33a2f5d29e08acfc0838d651c5a153f
+updated: 2018-07-05T21:50:08.082345+02:00
+imports:
+- name: github.com/cloudfoundry-incubator/cf-test-helpers
+  version: 4dd9d48177008d37e3a5e581cf65c8585453e45c
+  subpackages:
+  - cf
+  - generator
+  - helpers
+  - runner
+- name: github.com/nu7hatch/gouuid
+  version: 179d4d0c4d8d407a32af483c2354df1d2c91e6c3
+- name: github.com/onsi/ginkgo
+  version: 6665a7cf0a58963034f099ffcd3bc4e4a11c300c
+  subpackages:
+  - config
+  - internal/codelocation
+  - internal/containernode
+  - internal/failer
+  - internal/leafnodes
+  - internal/remote
+  - internal/spec
+  - internal/spec_iterator
+  - internal/specrunner
+  - internal/suite
+  - internal/testingtproxy
+  - internal/writer
+  - reporters
+  - reporters/stenographer
+  - reporters/stenographer/support/go-colorable
+  - reporters/stenographer/support/go-isatty
+  - types
+- name: github.com/onsi/gomega
+  version: f9b2e15b86f3d6dd556700ffbaa4feee86745028
+  subpackages:
+  - format
+  - gbytes
+  - gexec
+  - internal/assertion
+  - internal/asyncassertion
+  - internal/oraclematcher
+  - internal/testingtsupport
+  - matchers
+  - matchers/support/goraph/bipartitegraph
+  - matchers/support/goraph/edge
+  - matchers/support/goraph/node
+  - matchers/support/goraph/util
+  - types
+- name: golang.org/x/net
+  version: 1f9224279e98554b6a6432d4dd998a739f8b2b7c
+  subpackages:
+  - html
+  - html/atom
+  - html/charset
+- name: golang.org/x/sys
+  version: 90796e5a05ce440b41c768bd9af257005e470461
+  subpackages:
+  - unix
+- name: golang.org/x/text
+  version: 5cec4b58c438bd98288aeb248bab2c1840713d21
+  subpackages:
+  - encoding
+  - encoding/charmap
+  - encoding/htmlindex
+  - encoding/internal
+  - encoding/internal/identifier
+  - encoding/japanese
+  - encoding/korean
+  - encoding/simplifiedchinese
+  - encoding/traditionalchinese
+  - encoding/unicode
+  - internal/language
+  - internal/language/compact
+  - internal/tag
+  - internal/utf8internal
+  - language
+  - runes
+  - transform
+- name: gopkg.in/yaml.v2
+  version: cd8b52f8269e0feb286dfeef29f8fe4d5b397e0b
+testImports:
+- name: github.com/pivotal-golang/archiver
+  version: e135af3d5a2a2c5a80d3c9b366669ac8ed18953b
+  subpackages:
+  - extractor/test_helper

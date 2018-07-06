@@ -15,6 +15,7 @@ Bundler.require :default, ENV['RACK_ENV'].to_sym
 
 $stdout.sync = true
 $stderr.sync = true
+$counter = 0
 
 class Dora < Sinatra::Base
   use Instances
@@ -24,6 +25,17 @@ class Dora < Sinatra::Base
 
   get '/' do
     "Hi, I'm Dora!"
+  end
+
+  get '/health' do
+    $stderr.puts("Called /health #{$counter}")
+    if $counter < 3
+      $counter += 1
+     status 500
+     body "Hit /health #{$counter} times"
+    else
+      "I'm alive"
+    end
   end
 
   get '/ping/:address' do
@@ -39,7 +51,7 @@ class Dora < Sinatra::Base
   end
 
   get '/sigterm' do
-    "Available sigterms #{`man -k signal | grep list`}"
+    "Available sigterms #{Signal.list.keys}"
   end
 
   get '/dpkg/:package' do
@@ -89,8 +101,12 @@ class Dora < Sinatra::Base
     ENV.to_hash.to_s
   end
 
+  get '/env.json' do
+    ENV.to_hash.to_json
+  end
+
   get '/myip' do
-    `ip addr show  | grep 'scope global w' | grep inet | awk '{print $2}'`
+    `ip route get 1 | awk '{print $NF;exit}'`
   end
 
   get '/largetext/:kbytes' do
